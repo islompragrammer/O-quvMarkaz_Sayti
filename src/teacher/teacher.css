@@ -1,0 +1,109 @@
+/* TEACHER MODE */
+:root {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --surface: #fff;
+  --ink: #202333;
+  --ink-soft: #777e90;
+  --line: #e4e6ef;
+  --navy: #202b45;
+  --gold: #c49a4a;
+  --ok: #16834c;
+  --danger: #c8424e;
+  font-family: Inter, system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #131722;
+    --surface: #1c2230;
+    --ink: #eef0f6;
+    --ink-soft: #9da5b8;
+    --line: #343c50;
+    --navy: #e3e8f5;
+    --gold: #dfbd72;
+    --ok: #4aca83;
+    --danger: #f0747f;
+  }
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --surface: #fff;
+  --ink: #202333;
+  --ink-soft: #777e90;
+  --line: #e4e6ef;
+  --navy: #202b45;
+  --gold: #c49a4a;
+  --ok: #16834c;
+  --danger: #c8424e;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #131722;
+  --surface: #1c2230;
+  --ink: #eef0f6;
+  --ink-soft: #9da5b8;
+  --line: #343c50;
+  --navy: #e3e8f5;
+  --gold: #dfbd72;
+  --ok: #4aca83;
+  --danger: #f0747f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+@media print {
+  body:has(#teacherApp .badge-modal) * { visibility: hidden !important; }
+  #teacherApp .teacher-modal-backdrop,
+  #teacherApp .teacher-modal-backdrop * { visibility: visible !important; }
+  #teacherApp .teacher-modal-backdrop { position: absolute; inset: 0; background: #fff; }
+  #teacherApp .badge-modal { border: 0; box-shadow: none; }
+  #teacherApp .badge-modal > header,
+  #teacherApp .badge-side-switch,
+  #teacherApp .badge-modal footer { display: none; }
+  #teacherApp .teacher-badge { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
